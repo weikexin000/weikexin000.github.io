@@ -1,14 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>emoji送了一个红包给你</title>
+    <title>Hello</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style type="text/css">
+        * {
+            line-height: 40px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-<div id="app"></div>
-<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/d0/20/a2d02026-2394-8be3-1a81-72895ce3f306/AppIcon-1x_U007emarketing-85-220-6.png/460x0w.jpg" alt="" width="0" height="0">
-<iframe id="iframe"></iframe>
-<script src="./bundle.js"></script>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="hello">
+                <span class="comments">你好...</span>
+                <br />
+                <span class="comments">再见...</span>
+            </div>
+        </div>
+
+    </div>
+ <script type="text/javascript">
+   Element.prototype.typewriter=function(a){
+            var d = this,
+                c = d.innerHTML,
+                b = 0;
+            d.innerHTML="";
+            var e = setInterval(function() {
+                var f = c.substr(b, 1);
+                if (f == "<") {
+                    b = c.indexOf(">", b) + 1
+                } else {
+                    b++
+                }
+                d.innerHTML=c.substring(0, b) + (b & 1 ? "_" : "");
+                if (b >= c.length) {
+                    clearInterval(e)
+                }
+            }, 100)
+        return this
+    
+    }
+    document.getElementById("hello").typewriter();
+ </script>
 </body>
 </html>
